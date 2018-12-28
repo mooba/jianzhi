@@ -7,7 +7,7 @@ package jianzhioffer;
  * 整数，判断数组中是否含有该整数。
  */
 
-public class Solution1 {
+public class FindIn2DArray {
     public boolean Find(int target, int [][] array) {
         int rowNum = array.length;
         int colNum = array[0].length;

@@ -1,8 +1,5 @@
 package jianzhioffer;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 /**
  * 重建二叉树
  * 输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
@@ -10,14 +7,14 @@ import java.util.Arrays;
  */
 
 // Definition for binary tree
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode(int x) { val = x; }
-}
+// class TreeNode {
+//     int val;
+//     TreeNode left;
+//     TreeNode right;
+//     TreeNode(int x) { val = x; }
+// }
 
-public class Solution4 {
+public class ReConstructBinaryTree {
     public TreeNode reConstructBinaryTree(int [] pre,int [] in) {
         int prelen = pre.length;
         int inlen = in.length;
@@ -60,7 +57,7 @@ public class Solution4 {
     public static void main(String[] args) {
         int[] pre = {1,2,4,7,3,5,6,8};
         int[] in = {4,7,2,1,5,3,8,6};
-        Solution4 solution4 = new Solution4();
+        ReConstructBinaryTree solution4 = new ReConstructBinaryTree();
         TreeNode root = solution4.reConstructBinaryTree(pre, in);
         System.out.println(root.val);
     }

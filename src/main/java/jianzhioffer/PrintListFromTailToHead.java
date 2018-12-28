@@ -5,15 +5,8 @@ import java.util.ArrayList;
  * 从尾到头打印链表
  * 输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。
  */
-class ListNode {
-    int val;
-    ListNode next = null;
-    ListNode(int val) {
-        this.val = val;
-    }
-}
 
-public class Solution3 {
+public class PrintListFromTailToHead {
         public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
         ArrayList<Integer> retList = new ArrayList<Integer>();
         if (listNode == null)
@@ -46,8 +39,8 @@ public class Solution3 {
         n1.next = n2;
         n2.next = n3;
         
-        Solution3 solution3 = new Solution3();
-        ArrayList retList =  solution3.printListFromTailToHead(n1);
+        PrintListFromTailToHead solution3 = new PrintListFromTailToHead();
+        ArrayList<Integer> retList =  solution3.printListFromTailToHead(n1);
         System.out.println(retList);
     }
 }
