@@ -20,16 +20,32 @@ public class TreeNode {
 }
 */
 public class FindPathInBT {
-    LinkedList<TreeNode> doubleEndList = new LinkedList<TreeNode>();
+    private ArrayList<ArrayList<Integer>> listAll = new ArrayList<ArrayList<Integer>>();
+    private ArrayList<Integer> list = new ArrayList<Integer>();
     public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
-        ArrayList<ArrayList<Integer>> arrayList = new ArrayList<ArrayList<Integer>>();
         if (root == null)
-            return arrayList;
-        int tmpTarget = target;
-        LinkedList<TreeNode> doubleEndList = new LinkedList<TreeNode>();
-        return arrayList;
+            return listAll;
+
+        FindPathHelper(root, target);
+        return listAll;
     }
 
+    public void FindPathHelper(TreeNode root, int target) { // 使用深度优先遍历
+        list.add(root.val);
+        if (root.val == target && root.left == null && root.right == null) {
+            listAll.add(new ArrayList<Integer>(list));
+        }
 
+        if (root.left != null && target > root.val) {
+            FindPathHelper(root.left, target - root.val);
+        }
+
+        if (root.right != null && target > root.val) {
+            FindPathHelper(root.right, target - root.val);
+        }
+
+        list.remove(list.size() - 1);
+        return;
+    }
     
 }

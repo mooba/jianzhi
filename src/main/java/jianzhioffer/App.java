@@ -20,18 +20,34 @@ import java.util.concurrent.atomic.AtomicLong;
  *
  */
 public class App {
+    public static void quikSort(int[] array, int l, int r) { // 快排
+        if (l >= r)
+            return;
+
+        int i = l, j = r;
+        int x = array[l];
+        while (i < j ) {
+            while (i < j && array[j] >= x)
+                j--;
+            if (i < j)
+                array[i++] = array[j];
+            
+            while (i < j && array[i] < x)
+                i++;
+            if (i < j)
+                array[j--] = array[i];
+        }
+        array[i] = x;
+        quikSort(array, l, i - 1);
+        quikSort(array, i + 1, r);
+
+    }
+
     public static void main( String[] args )
     {
-        Runnable task = new Runnable(){
-            public void run() {
-                for (int i = 0; i < 100; i++)
-                    System.out.println(i);
-            }
-        };
-        Thread thread1 = new Thread(task);
-        Thread thread2 = new ThreadTask();
-        thread1.start(); // 为线程执行进行初始化操作，然后调用run方法
-        thread2.start();
+        int[] array = {7,9,2,8,5,4,6};
+        quikSort(array, 0, 6);
+        System.out.println(Arrays.toString(array));
     }
 }
 
