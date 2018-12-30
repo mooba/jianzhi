@@ -2,6 +2,8 @@ package jianzhioffer;
 
 import java.text.DateFormat;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -20,7 +22,13 @@ import java.util.concurrent.atomic.AtomicLong;
  *
  */
 public class App {
-    public static void quikSort(int[] array, int l, int r) { // 快排
+    /**
+     *
+     */
+
+    private static final Comparator<Object> REVERSE_ORDER = Collections.reverseOrder();
+
+	public static void quikSort(int[] array, int l, int r) { // 快排
         if (l >= r)
             return;
 
@@ -46,7 +54,8 @@ public class App {
     public static void main( String[] args )
     {
         int[] array = {7,9,2,8,5,4,6};
-        quikSort(array, 0, 6);
+        // Integer[] array = {new Integer(7), new Integer(9)};
+        Arrays.sort(array);
         System.out.println(Arrays.toString(array));
     }
 }
