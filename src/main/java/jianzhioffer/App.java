@@ -62,8 +62,7 @@ public class App {
         // Integer[] array = {new Integer(7), new Integer(9)};
         // Arrays.sort(array);
 
-        ExecutorService exex = Executors.newSingleThreadExecutor();
-        exex.submit(new ThreadTask());
+        System.out.println(Arrays.toString(array2D[0]));
     }
 }
 
